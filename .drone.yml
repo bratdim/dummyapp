@@ -1,11 +1,18 @@
 pipeline:
-  publish:
-    image: plugins/docker
-    environment:
-      - DOCKER_LAUNCH_DEBUG=true
-    registry: reg.k8s.adminscloud.com:5000
-    dockerfile: Dockerfile
-    auto_tag: true
-    insecure: false
-    when:
-      branch: master
+  restore-cache:
+    image: drillster/drone-volume-cache
+    restore: true
+    mount:
+      - ./.yarn-cache
+      - ./node_modules
+    volumes:
+      - /tmp/cache:/cache
+
+  install:
+    image: node:9.8.0
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install --pure-lockfile
