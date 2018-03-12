@@ -1,6 +1,6 @@
 pipeline:
   docker:
     image: dummyapp
-    registry: reg.k8s.adminscloud.com
+    registry: reg.k8s.adminscloud.com:5000
     dockerfile: Dockerfile
     auto_tag: true
