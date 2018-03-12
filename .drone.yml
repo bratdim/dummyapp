@@ -1,6 +1,11 @@
 pipeline:
-  docker:
-    image: dummyapp
+  publish:
+    image: plugins/docker
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
     registry: reg.k8s.adminscloud.com:5000
     dockerfile: Dockerfile
     auto_tag: true
+    insecure: false
+    when:
+      branch: master
