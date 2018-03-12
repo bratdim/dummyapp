@@ -28,3 +28,11 @@ pipeline:
     group: testing
     commands:
       - yarn run lint
+
+  publish:
+    image: dummyapp
+    repo: reg.k8s.adminscloud.com
+    dockerfile: Dockerfile
+    tags: [ latest, '${DRONE_TAG}' ]
+    when:
+      event: tag
