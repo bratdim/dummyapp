@@ -1,0 +1,6 @@
+pipeline:
+  docker:
+    image: dummyapp
+    registry: reg.k8s.adminscloud.com
+    dockerfile: Dockerfile
+    auto_tag: true
