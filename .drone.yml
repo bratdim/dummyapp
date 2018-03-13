@@ -14,3 +14,4 @@ pipeline:
     auto_tag: true
     repo: foo/dummyapp
     launch_debug: true
+    debug: true
