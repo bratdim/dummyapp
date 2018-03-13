@@ -8,14 +8,10 @@ pipeline:
       - yarn config set cache-folder .yarn-cache
       - yarn install --pure-lockfile
 
-  testing:
-    image: node:9.8.0-alpine
-    group: testing
-    commands:
-      - yarn run test
-
-  lint:
-    image: node:9.8.0-alpine
-    group: testing
-    commands:
-      - yarn run lint
+  publish:
+    image: plugins/docker
+    registry: reg.k8s.adminscloud.com
+    dockerfile: Dockerfile
+    tags: [ latest, '${DRONE_TAG}' ]
+    when:
+      event: tag
