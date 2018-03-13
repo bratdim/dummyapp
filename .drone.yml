@@ -2,10 +2,10 @@ pipeline:
   publish_docker:
     image: plugins/docker:1.12
     registry: reg.k8s.adminscloud.com:5000
+    repo: reg.k8s.adminscloud.com:5000/foo/dummyapp
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
     auto_tag: true
-    repo: foo/dummyapp
     launch_debug: true
     debug: true
     insecure: true
