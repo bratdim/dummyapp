@@ -9,7 +9,6 @@ pipeline:
   publish:
     image: plugins/docker
     registry: reg.k8s.adminscloud.com
+    username: docker
+    password: spass1
     dockerfile: Dockerfile
-    tags: [ latest, '${DRONE_TAG}' ]
-    when:
-      event: tag
