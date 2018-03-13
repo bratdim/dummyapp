@@ -7,7 +7,7 @@ pipeline:
       - npm install express --save
 
   docker:
-    image: plugins/docker
+    image: plugins/docker:1.12
     registry: reg.k8s.adminscloud.com:5000
     secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
