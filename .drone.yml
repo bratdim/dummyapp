@@ -13,5 +13,4 @@ pipeline:
     dockerfile: Dockerfile
     auto_tag: true
     repo: foo/dummyapp
-    environment:
-      DOCKER_LAUNCH_DEBUG: true
+    launch_debug: true
