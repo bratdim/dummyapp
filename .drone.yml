@@ -1,12 +1,4 @@
 pipeline:
-  restore-cache:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - ./.yarn-cache
-      - ./node_modules
-    volumes:
-      - /tmp/cache:/cache
   install:
     image: node:9.8.0
     commands:
@@ -15,3 +7,15 @@ pipeline:
       - yarn --version
       - yarn config set cache-folder .yarn-cache
       - yarn install --pure-lockfile
+
+  testing:
+    image: node:9.8.0-alpine
+    group: testing
+    commands:
+      - yarn run test
+
+  lint:
+    image: node:9.8.0-alpine
+    group: testing
+    commands:
+      - yarn run lint
