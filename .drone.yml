@@ -9,6 +9,7 @@ pipeline:
   publish:
     image: plugins/docker
     registry: reg.k8s.adminscloud.com:5000
-    username: docker
-    password: spass1
+    secrets: [ docker_username, docker_password ]
     dockerfile: Dockerfile
+    auto_tag: true
+    repo: foo/dummyapp
