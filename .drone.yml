@@ -8,5 +8,6 @@ pipeline:
     repo: foo/dummyapp
     launch_debug: true
     debug: true
+    insecure: true
     when:
       branch: master
