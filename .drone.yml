@@ -1,12 +1,10 @@
 pipeline:
   install:
-    image: node:9.8.0
+    image: node:9.8.0-alpine
     commands:
       - node -v
       - npm -v
-      - yarn --version
-      - yarn config set cache-folder .yarn-cache
-      - yarn install --pure-lockfile
+      - npm install express --save
 
   publish:
     image: plugins/docker
