@@ -1,4 +1,14 @@
 pipeline:
+  test:
+    image: node:9.8.0-alpine
+    group: testing
+    commands:
+      - node -v
+      - npm -v
+      - npm install express --save
+      - npm install -g lint
+      - node-lint app.js
+
   publish_docker:
     image: plugins/docker:1.12
     registry: reg.k8s.adminscloud.com:5000
