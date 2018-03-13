@@ -1,6 +1,6 @@
 pipeline:
   install:
-    image: node:9.8.0-alpine
+    image: node:9.8.0
     commands:
       - node -v
       - npm -v
