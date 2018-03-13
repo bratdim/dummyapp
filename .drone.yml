@@ -15,3 +15,5 @@ pipeline:
     repo: foo/dummyapp
     launch_debug: true
     debug: true
+    when:
+      branch: master
