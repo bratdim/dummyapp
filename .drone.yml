@@ -1,12 +1,5 @@
 pipeline:
-  install:
-    image: node:9.8.0
-    commands:
-      - node -v
-      - npm -v
-      - npm install express --save
-
-  docker:
+  publish_docker:
     image: plugins/docker:1.12
     registry: reg.k8s.adminscloud.com:5000
     secrets: [ docker_username, docker_password ]
