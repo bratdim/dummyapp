@@ -1,8 +1,12 @@
 {
   "name": "dummyapp",
   "version": "1.0.0",
-  "description": "Test NodeJS app",
+  "description": "Dummy App",
   "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/bratdim/dummyapp.git"
   },
-  "author": "Brat Dim",
+  "author": "bratdim",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bratdim/dummyapp/issues"
   },
-  "homepage": "https://github.com/bratdim/dummyapp#readme",
-  "dependencies": {
-    "express": "^4.16.2"
-  }
+  "homepage": "https://github.com/bratdim/dummyapp#readme"
 }
